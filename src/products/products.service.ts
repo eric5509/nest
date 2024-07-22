@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { AddProductDto } from './dto/addProductDto';
 import { UpdateProductDto } from './dto/updateProductDto';
 import { InjectModel } from '@nestjs/mongoose';
-import { Product } from '../schema/product.schema';
+import { Product } from '../schemas/product.schema';
 import { Model } from 'mongoose';
 
 @Injectable()
