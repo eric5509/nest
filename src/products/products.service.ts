@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { AddProductDto } from './dto/addProductDto';
 import { UpdateProductDto } from './dto/updateProductDto';
 import { InjectModel } from '@nestjs/mongoose';
-import { Product } from './product.schema';
+import { Product } from './schema/product.schema';
 import { Model } from 'mongoose';
 
 @Injectable()
@@ -43,7 +43,7 @@ export class ProductsService {
           `Sorry, the product with the ID ${id} does not Exist`,
         );
       await this.productModel.findOneAndUpdate({ _id: id }, updateProduct);
-      return this.fetchProduct (id);
+      return this.fetchProduct(id);
     } catch (error) {
       if (error instanceof NotFoundException) {
         throw error;
@@ -63,7 +63,7 @@ export class ProductsService {
 
       await this.productModel.deleteOne({ _id: id });
 
-     return this.fetchProducts();
+      return this.fetchProducts();
     } catch (error) {
       if (error instanceof NotFoundException) {
         throw error;
