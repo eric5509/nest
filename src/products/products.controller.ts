@@ -7,9 +7,8 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
-import { AddProductDto } from './dto/addProductDto';
 import { ProductsService } from './products.service';
-import { UpdateProductDto } from './dto/updateProductDto';
+import { AddProductDto, UpdateProductDto } from './product.dto';
 
 @Controller('products')
 export class ProductsController {
