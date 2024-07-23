@@ -1,8 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Product } from './product.schema';
+import { Product } from './products.schema';
 import { Model } from 'mongoose';
-import { AddProductDto, UpdateProductDto } from './product.dto';
+import { AddProductDto, UpdateProductDto } from './products.dto';
 
 @Injectable()
 export class ProductsService {
@@ -70,6 +70,5 @@ export class ProductsService {
         );
       }
     }
-    return;
   }
 }
