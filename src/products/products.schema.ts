@@ -8,18 +8,18 @@ export class Product extends Document {
   @Prop({
     required: true,
   })
-
   productName: string;
-  @Prop({
-    required: true,
-  })
 
-  amount: number;
   @Prop({
     required: true,
   })
-  
+  amount: number;
+
+  @Prop({
+    required: true,
+  })
   description: string;
+  
   @Prop({
     required: true,
   })

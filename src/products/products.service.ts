@@ -59,9 +59,7 @@ export class ProductsService {
       const productExist = await this.productModel.findById(id);
       if (!productExist)
         throw new NotFoundException(`Product with the ID ${id} does not exist`);
-
       await this.productModel.deleteOne({ _id: id });
-
       return this.fetchProducts();
     } catch (error) {
       if (error instanceof NotFoundException) {
